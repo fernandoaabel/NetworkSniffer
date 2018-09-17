@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.btIniciar = new System.Windows.Forms.Button();
             this.btEncerrar = new System.Windows.Forms.Button();
             this.cbNetworkInterface = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridPacotes = new System.Windows.Forms.DataGridView();
+            this.clNroPacote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProtocolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clIPOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clPortaOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clIPDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clPortaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCriptografado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chTransmissoes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbAbertas = new System.Windows.Forms.Label();
@@ -55,13 +62,6 @@
             this.clIP2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPorta2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clQtdPacotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNroPacote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clProtocolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clIPOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clPortaOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clIPDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clPortaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCriptografado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPacotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTransmissoes)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -142,34 +142,83 @@
             this.dataGridPacotes.TabIndex = 5;
             this.dataGridPacotes.DoubleClick += new System.EventHandler(this.dataGridPacotes_DoubleClick);
             // 
+            // clNroPacote
+            // 
+            this.clNroPacote.DataPropertyName = "clNroPacote";
+            this.clNroPacote.HeaderText = "ID";
+            this.clNroPacote.Name = "clNroPacote";
+            this.clNroPacote.ReadOnly = true;
+            // 
+            // clProtocolo
+            // 
+            this.clProtocolo.DataPropertyName = "clProtocolo";
+            this.clProtocolo.HeaderText = "Protocol";
+            this.clProtocolo.Name = "clProtocolo";
+            this.clProtocolo.ReadOnly = true;
+            // 
+            // clIPOrigem
+            // 
+            this.clIPOrigem.DataPropertyName = "clIPOrigem";
+            this.clIPOrigem.HeaderText = "IP 1";
+            this.clIPOrigem.Name = "clIPOrigem";
+            this.clIPOrigem.ReadOnly = true;
+            // 
+            // clPortaOrigem
+            // 
+            this.clPortaOrigem.DataPropertyName = "clPortaOrigem";
+            this.clPortaOrigem.HeaderText = "Port 1";
+            this.clPortaOrigem.Name = "clPortaOrigem";
+            this.clPortaOrigem.ReadOnly = true;
+            // 
+            // clIPDestino
+            // 
+            this.clIPDestino.DataPropertyName = "clIPDestino";
+            this.clIPDestino.HeaderText = "IP 2";
+            this.clIPDestino.Name = "clIPDestino";
+            this.clIPDestino.ReadOnly = true;
+            // 
+            // clPortaDestino
+            // 
+            this.clPortaDestino.DataPropertyName = "clPortaDestino";
+            this.clPortaDestino.HeaderText = "Port 2";
+            this.clPortaDestino.Name = "clPortaDestino";
+            this.clPortaDestino.ReadOnly = true;
+            // 
+            // clCriptografado
+            // 
+            this.clCriptografado.DataPropertyName = "clCriptografado";
+            this.clCriptografado.HeaderText = "Is Cript?";
+            this.clCriptografado.Name = "clCriptografado";
+            this.clCriptografado.ReadOnly = true;
+            // 
             // chTransmissoes
             // 
             this.chTransmissoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea5.Name = "ChartArea1";
-            this.chTransmissoes.ChartAreas.Add(chartArea5);
-            legend5.Alignment = System.Drawing.StringAlignment.Center;
-            legend5.BackColor = System.Drawing.Color.WhiteSmoke;
-            legend5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            legend5.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
-            legend5.Name = "Legendas";
-            legend5.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            legend5.Title = "Legendas";
-            this.chTransmissoes.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chTransmissoes.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BackColor = System.Drawing.Color.WhiteSmoke;
+            legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend1.Name = "Legendas";
+            legend1.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            legend1.Title = "Legendas";
+            this.chTransmissoes.Legends.Add(legend1);
             this.chTransmissoes.Location = new System.Drawing.Point(870, 90);
             this.chTransmissoes.Name = "chTransmissoes";
             this.chTransmissoes.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legendas";
-            series5.Name = "srTransmissoes";
-            this.chTransmissoes.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legendas";
+            series1.Name = "srTransmissoes";
+            this.chTransmissoes.Series.Add(series1);
             this.chTransmissoes.Size = new System.Drawing.Size(403, 240);
             this.chTransmissoes.TabIndex = 6;
-            title5.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.Name = "Title1";
-            title5.Text = "Captured Transmissions";
-            this.chTransmissoes.Titles.Add(title5);
+            title1.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Captured Transmissions";
+            this.chTransmissoes.Titles.Add(title1);
             // 
             // groupBox1
             // 
@@ -344,58 +393,9 @@
             // clQtdPacotes
             // 
             this.clQtdPacotes.DataPropertyName = "clQtdPacotes";
-            this.clQtdPacotes.HeaderText = "# Pacotes";
+            this.clQtdPacotes.HeaderText = "# Packets";
             this.clQtdPacotes.Name = "clQtdPacotes";
             this.clQtdPacotes.ReadOnly = true;
-            // 
-            // clNroPacote
-            // 
-            this.clNroPacote.DataPropertyName = "clNroPacote";
-            this.clNroPacote.HeaderText = "ID";
-            this.clNroPacote.Name = "clNroPacote";
-            this.clNroPacote.ReadOnly = true;
-            // 
-            // clProtocolo
-            // 
-            this.clProtocolo.DataPropertyName = "clProtocolo";
-            this.clProtocolo.HeaderText = "Protocol";
-            this.clProtocolo.Name = "clProtocolo";
-            this.clProtocolo.ReadOnly = true;
-            // 
-            // clIPOrigem
-            // 
-            this.clIPOrigem.DataPropertyName = "clIPOrigem";
-            this.clIPOrigem.HeaderText = "IP 1";
-            this.clIPOrigem.Name = "clIPOrigem";
-            this.clIPOrigem.ReadOnly = true;
-            // 
-            // clPortaOrigem
-            // 
-            this.clPortaOrigem.DataPropertyName = "clPortaOrigem";
-            this.clPortaOrigem.HeaderText = "Port 1";
-            this.clPortaOrigem.Name = "clPortaOrigem";
-            this.clPortaOrigem.ReadOnly = true;
-            // 
-            // clIPDestino
-            // 
-            this.clIPDestino.DataPropertyName = "clIPDestino";
-            this.clIPDestino.HeaderText = "IP 2";
-            this.clIPDestino.Name = "clIPDestino";
-            this.clIPDestino.ReadOnly = true;
-            // 
-            // clPortaDestino
-            // 
-            this.clPortaDestino.DataPropertyName = "clPortaDestino";
-            this.clPortaDestino.HeaderText = "Port 2";
-            this.clPortaDestino.Name = "clPortaDestino";
-            this.clPortaDestino.ReadOnly = true;
-            // 
-            // clCriptografado
-            // 
-            this.clCriptografado.DataPropertyName = "clCriptografado";
-            this.clCriptografado.HeaderText = "Is Cript?";
-            this.clCriptografado.Name = "clCriptografado";
-            this.clCriptografado.ReadOnly = true;
             // 
             // MainForm
             // 
